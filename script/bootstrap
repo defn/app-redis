@@ -4,7 +4,7 @@ function bootstrap {
   local shome="$(cd -P -- "$(dirname -- "$BASH_SOURCE")/.." && pwd -P)"
   source "$shome/script/profile"
 
-  pkg ensure databases/redis
+  env NO_CHECKSUM=yes pkg ensure databases/redis # TODO 3.0.7 checksum mismatch
 }
 
 bootstrap
